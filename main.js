@@ -1,9 +1,23 @@
 //находим нужный список по названию класса и заносим его в переменную
 var $bread = document.querySelector('.ba-breadcrumbs');
+
+/* способ 1 
 //клонируем первый элемент списка со всем его содержимым и добавляем в список
 $bread.appendChild(($bread.firstElementChild).cloneNode(true)); 
 //в добавленном элементе находим ссылку и меняем ее текст на необходимый
 ($bread.lastElementChild).querySelector('.ba-breadcrumbs__link').textContent="company";
+*/
+
+/* способ 2. попроще. */
+let $breadcrumbsItem = document.createElement('li'); //создаем элемент списка
+$breadcrumbsItem.setAttribute('class', 'ba-breadcrumbs__item'); //добавляем класс
+let $breadcrumbsLink = document.createElement('a'); //создаем ссылку
+$breadcrumbsLink.setAttribute('href', '#'); //добавляем аттрибутов
+$breadcrumbsLink.setAttribute('class', 'ba-breadcrumbs__link'); //добавляем класс
+$breadcrumbsLink.innerText = 'company'; //добавляем ссылке текст
+$breadcrumbsItem.appendChild($breadcrumbsLink); //засовываем ссылку в элемент списка
+$bread.appendChild($breadcrumbsItem); //засовываем элемент списка в список
+
 
 //получаем список всех заголовков бенефитов
 var $redBenefit = document.querySelectorAll('.ba-benefit__title');
