@@ -16,5 +16,5 @@ for (let i=0;i<3;i++) {
 var $memberImages = document.querySelectorAll('.ba-team-member__img');
 //c помощью цикла изменяем значение аттрибута src на что-то короткое и невнятное
 for (let i=0;i<$memberImages.length;i++) {
-    $memberImages[i].setAttribute('src', 'shorturl.at/nsuFK');
+    $memberImages[i].setAttribute('src', 'http://www.spletnik.ru/img/2019/04/nadja/20190415-keanu-5.jpg');
 }
